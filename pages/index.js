@@ -4,10 +4,10 @@ import styles from '../styles/Home.module.css'
 import { getAllTickers } from './api'
 import { useEffect } from 'react'
 
-export default function Home({ tickers }) {
+const Home = (props) => {
 
   useEffect(() => {
-    console.log(">>>>>> tickers", tickers)
+    console.log(">>>>>> tickers", props.tickers)
   })
 
   return (
@@ -17,6 +17,7 @@ export default function Home({ tickers }) {
         <meta name="description" content="Bit boasis application" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <h1>HI</h1>
     </div>
   )
 }
@@ -29,3 +30,5 @@ export async function getServerSideProps() {
     }
   }
 }
+
+export default Home
