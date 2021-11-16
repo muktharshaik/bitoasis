@@ -1,13 +1,31 @@
 import styles from '../styles/Home.module.css'
-import { getAllTickers, getTickerInfo } from './api'
-import { useEffect } from 'react'
+import { getAllTickers } from './api'
+import ws from 'ws';
+import { useEffect } from 'react';
+
+const webS = new ws(process.env.NEXT_PUBLIC_SOCKET_ENDPOINT);
+
+
+const getTickerInfo = async (symbol) => {
+
+  let msg = JSON.stringify({ 
+    event: 'subscribe', 
+    channel: 'ticker', 
+    symbol: `${symbol}` 
+  })
+    
+  webS.on('open', () => webS.send(msg));
+  const val = webS.on('message', (msg) => {return msg})
+  return val
+}
 
 const Home = (props) => {
-  
-  useEffect(() => {
-    console.log(">>>>>>> TICKER INFO <<<<<<<", props.tickerInfo)
-  })
 
+  useEffect(async () => {
+    const tickerVal = getTickerInfo('tBTCUSD')
+    console.log(">>>>>>>>>>>> value <<<<<<<<<<<", tickerVal);
+  }, [])
+  
   return (
       <div className={styles.main}>
         <div className={styles.container}>
@@ -20,12 +38,10 @@ const Home = (props) => {
 }
 export async function getServerSideProps() {
   let tickers = await getAllTickers();
-  let tickerInfo = await getTickerInfo("hello")
 
   return {
     props: {
-      tickers,
-      tickerInfo
+      tickers
     }
   }
 }
