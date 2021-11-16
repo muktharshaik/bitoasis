@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Head from 'next/head'
+import NavBar from '../components/navbar'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,6 +10,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Bit boasis application" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <NavBar />
       <Component {...pageProps} />
     </>
   )
