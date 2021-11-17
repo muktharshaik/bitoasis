@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import Head from 'next/head'
 import NavBar from '../components/navbar'
+import { Store } from '../store/index'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -11,7 +12,9 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
-      <Component {...pageProps} />
+      <Store>
+        <Component {...pageProps} />
+      </Store>
     </>
   )
 }

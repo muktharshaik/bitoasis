@@ -6,10 +6,35 @@
 }
 
 .tickerslist {
-    border: 1px solid black;
-    height: 200px;
-    width: 500px;
+    width: 400px;
 
     margin-top: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* CARD  red color #CF302B*/
+
+.cardContainer {
+    height: 70px;
+    width: 40%;
+    padding: 10px;
+    margin: 2%;
+
+    border-radius: 2px;
+}
+.cardContainer:hover {
+    cursor: pointer;
+}
+
+.pctSpan {
+    float: right;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        margin: 0 5%;
+    }
 }
 

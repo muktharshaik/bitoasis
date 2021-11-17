@@ -1,16 +1,16 @@
 import { createContext, useState } from 'react';
 
 
-export const tickersContext = createContext([]);
+const tickersContext = createContext([]);
 
-const Store = ({ children }) => {
+export const Store = (props) => {
     const [tickers, setTickers] = useState([]);
 
     return (
-        <tickersContext.provider value={[tickers, setTickers]}>
-            {children}
-        </tickersContext.provider>
+        <tickersContext.Provider value={[tickers, setTickers]}>
+            {props.children}
+        </tickersContext.Provider>
     )
 }
 
-export default Store;
+export default tickersContext
