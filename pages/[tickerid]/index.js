@@ -69,9 +69,9 @@ const TickerDetails = ({tradeInfo}) => {
         <div className={styles.container}>
             <div className={styles.outerContainer}>
                 <div className={styles.tickerContainer}>
-                    {indexValue != 0 && <p onClick={handleClick}>Prev</p>}
+                    {indexValue != 0 && <p onClick={handleClick} className={styles.navBtn}>Prev</p>}
                     <TickerInfo ticker={ticker}/>
-                    {indexValue != tickersData.length && <p onClick={handleClick} >Next</p>}
+                    {indexValue != tickersData.length && <p onClick={handleClick} className={styles.navBtn}>Next</p>}
                 </div>
                 <TradeInfo tradeInfo={tradeInfo}/>
             </div>

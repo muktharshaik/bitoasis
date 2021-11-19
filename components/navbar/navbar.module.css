@@ -1,5 +1,23 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
 .navbar {
     height: 70px;
     width: 100%;
-    border: 1px solid black;
+    background-color: #323232;
+    position: fixed;
+    top: 0;
+    box-shadow: 1px 3px 10px rgb(255 255 255 / 10%);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo h2 {
+    font-family: Chicle;
+}
+
+.logo, .home {
+    color: white;
+    font-size: 24px;
 }
