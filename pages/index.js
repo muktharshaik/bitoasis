@@ -1,13 +1,13 @@
 import styles from '../styles/Home.module.css'
 import { getAllTickers } from './api'
-import { tickersContext } from '../store/index'
-import { useEffect, useState } from 'react'
+import tickersContext from '../store/index'
+import { useEffect, useState, useContext } from 'react'
 import {motion} from 'framer-motion'
 import { useRouter } from 'next/router'
 
 const Home = ({ reqTickerData }) => {
   
-  const [tickersData, setTickersData] = useState(tickersContext);
+  const [tickersData, setTickersData] = useContext(tickersContext);
   const [mouseEnt, setMouseEnt] = useState(false);
 
   const router = useRouter();
@@ -43,7 +43,6 @@ const Home = ({ reqTickerData }) => {
                       scale: mouseEnt ? 1.05 : 1
                     }}
                     onClick={() => {
-                      console.log(">>>>> ROUTER",router);
                       router.push(`/${ticker.symbol}`)
                     }}
                   >

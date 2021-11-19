@@ -7,5 +7,5 @@ export const getAllTickers = async () => (
 )
 
 export const getTradeInfo = async (symbol) => {
-  await instance.get(`/trades/${symbol}/hist`).then((res) => (res.data))
+  return await instance.get(`/trades/${symbol}/hist`).then((res) => (res.data))
 }
