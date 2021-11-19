@@ -106,12 +106,15 @@
 
 @media only screen and (max-width: 768px) and (min-width: 480px){
     .container {
-        margin: 10%;
+        margin: 20%;
     }
 }
 
 @media only screen and (max-width: 481px) {
     .container {
-        margin: 10% 0.01%;
+        margin: 30% 0.01%;
+    }
+    .tickerContent {
+        width: 100%;
     }
 }

@@ -2,6 +2,10 @@
   font-family: poppins;
   src: url(/fonts/Poppins-Light.ttf);
 }
+@font-face {
+  font-family: chicle;
+  src: url(/fonts/Chicle-Regular.ttf);
+}
 html,
 body {
   background-color: #323232;
